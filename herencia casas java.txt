@@ -1,0 +1,109 @@
+/*
+IMPLEMENTACION
+*/
+package obra;
+
+/**
+ *
+ * @author ADOLFONOVOA 
+ */
+public class Obra {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Apartamento apto =new Apartamento(100,"Calle 100 N 20 15",4,10,"medianero",100000);
+        double pago= apto.pagoAdmin();
+        System.out.println("El Valor del año de administracion es de " +pago);
+        
+    }
+    
+}
+CLASE PADRE CASA
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package obra;
+
+/**
+ *
+ * @author usuario
+ */
+public class Casa {
+
+private double Area;
+private String direccion;
+private int  numeroVentana;
+
+public Casa(double Area,String direccion,int numeroVentana){
+ this.Area= Area;
+ this.direccion= direccion;
+ this.numeroVentana= numeroVentana;
+}
+
+ public double getArea(){
+ 
+  return Area;
+ }
+public String getDireccion(){
+  
+  return direccion;
+ }
+ public double getVentana(){
+ 
+  return numeroVentana;
+ }
+ 
+ public void setArea(double area){
+ 
+  this.Area= area;
+ }
+public void setDireccion(String direccion){
+  
+  this.direccion= direccion;
+ }
+
+ public void setVentana(int numeroVentana){
+ 
+  this.numeroVentana= numeroVentana;
+ }
+ }
+// CLASE HIJO  APARTAMENTO
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package obra;
+
+/**
+ *
+ * @author usuario
+ */
+public class Apartamento extends Casa{
+    
+   private int piso;
+   private String ubicacion;
+   private double administracion;
+   
+public Apartamento(double Area,String direccion,int ventana,int piso, String ubicacion, double admintracion  ){
+ super(Area, direccion, ventana);
+  this.piso=piso;
+  this.ubicacion = ubicacion;
+  this.administracion = admintracion;
+
+}
+
+public double pagoAdmin(){
+        
+  double total;
+  total= administracion*12;
+  return total; 
+
+}
+}
+
